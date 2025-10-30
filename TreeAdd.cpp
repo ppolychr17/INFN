@@ -25,8 +25,8 @@ void TreeAddEff() {
     ROOT::RDataFrame df("Tuple_SpruceSLB_B0ToDpMuNu_DpToKPiPi/DecayTree", "MC_2.root"); // change the MC name and the directory etc
 
 	auto hK = LoadEff({"K1.root", "K2.root"}, // name of the ROOT files containing the efficiencies for the specific particle
-		"passing_DLLK>4&PROBNN_K>0.3", "total");
-
+		"passing_DLLK>4&PROBNN_K>0.3", "total"); // names of passing and total
+	
 	auto hPi = LoadEff({"PI1.root", "PI2.root"}, "passing_DLLK<2&PROBNN_PI>0.3", "total");
 
 	auto hMu = LoadEff({"M1.root", "M2.root"}, "passing_DLLmu>0&IsMuon==1&PROBNN_MU>0.3","total");
